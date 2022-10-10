@@ -1,0 +1,36 @@
+﻿@model CabManagement.Models.driver
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>driver</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.driverName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.driverName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.driverGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.driverGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.driverAge)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.driverAge)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.driverId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

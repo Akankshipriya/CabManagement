@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CabManagement.Models.driver>
+
+@{
+    ViewData["Title"] = "DisplayCar";
+}
+
+<h1>DisplayCar</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.driverName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.driverGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.driverAge)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.driverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.driverGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.driverAge)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.driverId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.driverId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.driverId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
